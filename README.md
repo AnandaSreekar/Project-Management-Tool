@@ -1,431 +1,255 @@
-🚀 Project Overview
+# 🚀 Project Management Tool
 
-The Project Management Tool is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application developed as part of the CodeAlpha Full Stack Development Internship.
+A Full Stack MERN application developed during the CodeAlpha Internship.
 
-The application helps users manage projects efficiently by allowing them to create projects, organize tasks, assign priorities, track progress, and communicate through task comments.
+---
 
-It follows the CRUD (Create, Read, Update, Delete) concept and uses REST APIs to connect the React frontend with the Node.js backend and MongoDB database.
+# 📌 Features
 
-🎯 Objectives
-Manage projects efficiently.
-Break large projects into smaller tasks.
-Track task completion.
-Enable discussion using comments.
-Learn Full Stack Development using the MERN Stack.
-✨ Features
-Authentication
-User Registration
-User Login
-Password Encryption using bcrypt
-Protected Dashboard
-Project Management
+- User Authentication
+- Project Management
+- Task Management
+- Comment System
+- Protected Routes
+- Responsive UI
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+- React.js
+- React Router DOM
+- Axios
+- CSS
+- React Toastify
+
+## Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- bcrypt
+
+---
+
+# 📂 Folder Structure
+
+```text
+ProjectManagementTool
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── services
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│
+├── backend
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── config
+│   └── server.js
+```
+
+---
+
+# ✨ Features
+
+## 🔐 Authentication
+
+- Register User
+- Login User
+- Password Hashing (bcrypt)
+- Protected Dashboard
+
+---
+
+## 📁 Project Module
+
+- Create Project
+- Edit Project
+- Delete Project
+- Search Projects
+- Filter Projects
+- Sort Projects
+- Update Status
+
+Each Project contains:
+
+- Title
+- Description
+- Priority
+- Due Date
+- Status
+- Team Members
+
+---
+
+## ✅ Task Module
+
+Each Project can contain multiple Tasks.
+
+Task Features:
+
+- Create Task
+- Edit Task
+- Delete Task
+- Assign Member
+- Set Due Date
+- Set Priority
+- Mark Completed
+
+---
+
+## 💬 Comment Module
+
+Each Task contains its own comments.
 
 Users can:
 
-Create Projects
-View Projects
-Edit Projects
-Delete Projects
-Search Projects
-Filter Projects
-Sort Projects
-Mark Projects as Completed
+- Add Comment
+- Delete Comment
+- View Comments
 
-Each project stores:
+---
 
-Title
-Description
-Priority
-Status
-Due Date
-Task Management
+# 🗄 Database Collections
 
-Every project contains multiple tasks.
+## User
 
-Users can:
+- name
+- email
+- password
 
-Add Tasks
-Edit Tasks
-Delete Tasks
-Mark Tasks as Completed
-Assign Tasks
-Set Due Dates
-Set Priority
-Comment System
+## Project
 
-Every task has its own discussion section.
+- title
+- description
+- priority
+- status
+- dueDate
+- teamMembers
+- userId
 
-Users can:
+## Task
 
-Add Comments
-View Comments
-Delete Comments
+- title
+- description
+- assignedTo
+- priority
+- status
+- dueDate
+- projectId
 
-Comments help team members communicate about a particular task without creating additional tasks.
+## Comment
 
-Additional Features
-Loading Spinner
-Toast Notifications
-Edit Modal
-Delete Confirmation Modal
-Protected Routes
-Custom 404 Page
-Responsive Dashboard
-🛠 Technologies Used
-Frontend
-React.js
-React Router DOM
-Axios
-React Toastify
-CSS
-Backend
-Node.js
-Express.js
-Database
-MongoDB Atlas
-Mongoose
-Authentication
-bcrypt
-📂 Folder Structure
+- message
+- userName
+- taskId
 
-Frontend
+---
 
-frontend/
+# 🔄 Application Flow
 
-components/
-pages/
-services/
-App.jsx
-main.jsx
+```text
+Login/Register
+       │
+       ▼
+ Dashboard
+       │
+       ▼
+ Create Project
+       │
+       ▼
+ Manage Tasks
+       │
+       ▼
+ Create Task
+       │
+       ▼
+ Add Comments
+       │
+       ▼
+ MongoDB
+```
 
-Backend
+---
 
-backend/
+# 🌐 REST APIs
 
-controllers/
-models/
-routes/
-config/
-server.js
-🗄 Database Collections
-User
-
-Stores registered users.
-
-Fields
-
-name
-email
-password (hashed)
-Project
-
-Stores project information.
-
-Fields
-
-title
-description
-priority
-status
-dueDate
-userId
-Task
-
-Stores tasks belonging to a project.
-
-Fields
-
-title
-description
-assignedTo
-priority
-status
-dueDate
-projectId
-Comment
-
-Stores discussion related to a task.
-
-Fields
-
-message
-userName
-taskId
-🔄 Project Workflow
-
-User Login
-
-↓
-
-Dashboard
-
-↓
-
-Create Project
-
-↓
-
-Manage Tasks
-
-↓
-
-Create Task
-
-↓
-
-Add Comments
-
-↓
-
-MongoDB
-
-CRUD Operations
-Create
-
-Create a new Project or Task.
-
-HTTP Method
-
-POST
-
-Read
-
-Display existing Projects and Tasks.
-
-HTTP Method
-
-GET
-
-Update
-
-Edit Project or Task details.
-
-HTTP Method
-
-PUT
-
-Delete
-
-Remove a Project, Task, or Comment.
-
-HTTP Method
-
-DELETE
-
-🌐 REST API Endpoints
-Authentication
+## Authentication
 
 POST /api/auth/register
 
 POST /api/auth/login
 
-Projects
+## Projects
 
 GET /api/projects
 
 POST /api/projects
 
-PUT /api/projects/
+PUT /api/projects/:id
 
-DELETE /api/projects/
+DELETE /api/projects/:id
 
-PUT /api/projects//status
+PUT /api/projects/:id/status
 
-Tasks
+## Tasks
 
-GET /api/tasks/project/
+GET /api/tasks/project/:projectId
 
 POST /api/tasks
 
-PUT /api/tasks/
+PUT /api/tasks/:id
 
-DELETE /api/tasks/
+DELETE /api/tasks/:id
 
-Comments
+## Comments
 
-GET /api/comments/task/
+GET /api/comments/task/:taskId
 
 POST /api/comments
 
-PUT /api/comments/
+PUT /api/comments/:id
 
-DELETE /api/comments/
+DELETE /api/comments/:id
 
-🔐 Authentication Flow
+---
 
-Register
+# 📚 Learning Outcomes
 
-↓
+- MERN Stack
+- CRUD Operations
+- REST APIs
+- React Hooks
+- React Router
+- Axios
+- MongoDB
+- Mongoose
+- bcrypt Authentication
+- Component Reusability
+- Frontend-Backend Integration
 
-Password
+---
 
-↓
+# 🚀 Future Improvements
 
-bcrypt
+- JWT Authentication
+- WebSockets
+- Real-time Notifications
+- File Uploads
+- Team Roles
+- Email Notifications
 
-↓
+---
 
-Salt
+# 👨‍💻 Developed By
 
-↓
-
-Hash Password
-
-↓
-
-MongoDB
-
-During Login
-
-↓
-
-User enters Email & Password
-
-↓
-
-Backend finds user
-
-↓
-
-bcrypt.compare()
-
-↓
-
-Login Successful
-
-🔄 Overall Architecture
-
-React Frontend
-
-↓
-
-Axios
-
-↓
-
-Express Routes
-
-↓
-
-Controllers
-
-↓
-
-Mongoose Models
-
-↓
-
-MongoDB Atlas
-
-↓
-
-Response
-
-↓
-
-React UI Updates
-
-📋 Project Hierarchy
-
-Project
-
-↓
-
-Tasks
-
-↓
-
-Comments
-
-Example
-
-Project
-
-College Mini Project
-
-↓
-
-Tasks
-
-Design UI
-Build Backend
-Connect Database
-Testing
-
-↓
-
-Comments
-
-"Backend completed."
-
-"Testing started."
-
-"Database issue fixed."
-
-📌 New Components Added
-
-Loader.jsx
-
-Displays a loading spinner while data is loading.
-
-EditProjectModal.jsx
-
-Provides a professional popup for editing projects.
-
-EditTaskModal.jsx
-
-Provides a professional popup for editing tasks.
-
-DeleteModal.jsx
-
-Displays a confirmation popup before deleting.
-
-ProtectedRoute.jsx
-
-Prevents unauthorized users from accessing the dashboard.
-
-NotFound.jsx
-
-Displays a custom 404 page for invalid routes.
-
-CommentSection.jsx
-
-Allows users to communicate within individual tasks.
-
-⚠ Challenges Faced
-MongoDB connection issues
-React compilation errors
-Route configuration issues
-Prompt dialogs replaced with reusable modals
-Added loading spinner for better user experience
-Implemented project-task relationship
-Added comment functionality
-🚀 Future Enhancements
-JWT Authentication
-WebSocket Notifications
-Real-time Collaboration
-Email Notifications
-Team Management
-File Upload Support
-📚 Key Learning Outcomes
-
-Through this project I learned:
-
-MERN Stack Architecture
-React Component Structure
-React Hooks (useState & useEffect)
-Routing using React Router
-REST API Development
-MongoDB CRUD Operations
-Password Hashing using bcrypt
-Axios API Communication
-State Management
-Component Reusability
-Error Handling
-Frontend & Backend Integration
-👨‍💻 Developed By
-
-Ananda Satya Sai Sreekar Pula
+**Ananda Satya Sai Sreekar Pula**
 
 B.Tech Computer Science & Engineering
 
