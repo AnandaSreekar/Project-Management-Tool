@@ -1,0 +1,77 @@
+>>>>CRUD OPERATIONS---------
+
+GET=Get data:			Example-Show me all tasks.
+POST=Create data:		Example-Create a new task.
+PUT=Update data:		Example-Update existing data
+DELETE=Delete data:		Exampel:Remove data
+----------------------------------------------------------------
+
+
+req.body
+=
+Data inside request
+
+req.params
+=
+Data inside URL path
+
+req.query
+=
+Data after ?
+
+
+--------------------------------------------------------------
+Suppose:
+const users = await User.find();
+
+Error ❌
+
+Because:
+
+await can only be used inside async functions
+
+Correct:
+
+const getUsers = async (req,res)=>{----------//async is used when there is a time consuming tasks to be done then we gonna use this async and await operations like-dtabase calls ,api's etc..........
+
+   const users = await User.find();
+}
+
+---------------------------------------------------------------
+Quick Revision
+transform: translateY(-5px);
+
+means:
+
+Move the element up by 5 pixels from its current position.
+
+Memory trick:
+
+Y = Up/Down
+
+Negative (-) = Up
+Positive (+) = Down
+
+So:
+
+translateY(-5px)
+
+➡️ Up 5 pixels
+
+translateY(10px)
+
+➡️ Down 10 pixels.
+
+---------------------------------------------------------------
+How to know which file to look at?
+
+Think of the project as:
+
+UI Design          → App.css
+UI Structure       → JSX files
+Business Logic     → Dashboard.jsx
+API Calls          → projectService.jsx
+Routes             → projectRoutes.js
+Controller Logic   → projectController.js
+Database Model     → Project.js
+Database           → MongoDB

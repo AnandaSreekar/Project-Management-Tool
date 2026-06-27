@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f7fb;
+  color: #333;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: 95%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 30px;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  font-size: 48px;
+  color: #222;
+}
+
+.dashboard-header h2 {
+  margin-top: 10px;
+  color: #555;
+  font-size: 28px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 35px 0;
+}
+
+.stat-card {
+  width: 220px;
+  min-height: 140px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+  transition: .3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+}
+
+.stat-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.total-card{
+  background:#3498db;
+}
+
+.pending-card{
+  background:#f39c12;
+}
+
+.completed-card{
+  background:#27ae60;
+}
+
+.high-card{
+  background:#e74c3c;
+}
+
+.progress-card{
+  background:#8e44ad;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 17px;
+}
+
+button {
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+.footer{
+  margin:40px 0;
+  text-align:center;
+  color:#666;
+}
+
+@media(max-width:900px){
+
+.stat-card{
+width:100%;
+}
+
+.dashboard-header h1{
+font-size:35px;
+}
+
+.dashboard-header h2{
+font-size:22px;
+}
+
+}

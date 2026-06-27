@@ -1,0 +1,970 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef3fb;
+color:#222;
+}
+
+#root{
+min-height:100vh;
+}
+
+.container{
+width:92%;
+max-width:1350px;
+margin:auto;
+padding:30px;
+}
+
+/* ==========================================
+   LOGIN / REGISTER
+========================================== */
+
+.auth-page{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+padding:20px;
+}
+
+.auth-card{
+background:#fff;
+width:420px;
+padding:40px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+text-align:center;
+animation:fadeIn .5s ease;
+}
+
+.auth-card h1{
+font-size:34px;
+margin-bottom:10px;
+}
+
+.subtitle{
+margin-bottom:25px;
+color:#666;
+}
+
+.auth-card input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+transition:.3s;
+}
+
+.auth-card input:focus{
+outline:none;
+border-color:#2563eb;
+box-shadow:0 0 8px rgba(37,99,235,.25);
+}
+
+.primary-btn{
+width:100%;
+padding:14px;
+margin-top:15px;
+border:none;
+border-radius:10px;
+background:#2563eb;
+color:white;
+font-size:17px;
+cursor:pointer;
+transition:.3s;
+}
+
+.primary-btn:hover{
+background:#1d4ed8;
+transform:translateY(-2px);
+}
+
+.auth-link{
+margin-top:20px;
+}
+
+.auth-link a{
+margin-left:6px;
+text-decoration:none;
+color:#2563eb;
+font-weight:bold;
+}
+
+/* ==========================================
+   DASHBOARD HEADER
+========================================== */
+
+.dashboard-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:35px;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.dashboard-header h1{
+font-size:48px;
+margin-bottom:8px;
+}
+
+.dashboard-header h2{
+font-size:30px;
+font-weight:500;
+color:#555;
+}
+
+.dashboard-header button{
+padding:12px 24px;
+}
+
+/* ==========================================
+   STATS CARDS
+========================================== */
+
+.stats-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin:35px 0;
+}
+
+.stat-card{
+padding:30px;
+border-radius:18px;
+color:white;
+text-align:center;
+box-shadow:0 8px 22px rgba(0,0,0,.18);
+transition:.3s;
+}
+
+.stat-card:hover{
+transform:translateY(-6px);
+}
+
+.stat-card h3{
+font-size:25px;
+margin-bottom:10px;
+}
+
+.stat-card p{
+font-size:42px;
+font-weight:bold;
+}
+
+.total-card{
+background:#3498db;
+}
+
+.pending-card{
+background:#f39c12;
+}
+
+.completed-card{
+background:#27ae60;
+}
+
+.high-card{
+background:#e74c3c;
+}
+
+.progress-card{
+background:#8e44ad;
+}
+
+/* ==========================================
+   PROJECT FORM
+========================================== */
+
+.project-form{
+background:white;
+padding:30px;
+border-radius:18px;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+display:flex;
+flex-direction:column;
+gap:18px;
+margin-bottom:35px;
+}
+
+.project-form h2{
+margin-bottom:5px;
+}
+
+.project-form input,
+.project-form textarea,
+.project-form select{
+padding:14px;
+font-size:16px;
+border:1px solid #ddd;
+border-radius:10px;
+transition:.3s;
+}
+
+.project-form input:focus,
+.project-form textarea:focus,
+.project-form select:focus{
+outline:none;
+border-color:#2563eb;
+box-shadow:0 0 8px rgba(37,99,235,.2);
+}
+
+.project-form textarea{
+resize:none;
+}
+
+.project-form button{
+padding:14px;
+border:none;
+border-radius:10px;
+background:#2563eb;
+color:white;
+font-size:17px;
+cursor:pointer;
+transition:.3s;
+}
+
+.project-form button:hover{
+background:#1d4ed8;
+}
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+input[type="text"]{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+margin-bottom:20px;
+}
+
+/* ==========================================
+   FILTER BUTTONS
+========================================== */
+
+.filter-buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+margin:20px 0;
+flex-wrap:wrap;
+}
+
+.filter-buttons button{
+padding:10px 22px;
+border:none;
+border-radius:8px;
+background:#555;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+.filter-buttons button:hover{
+background:#2563eb;
+}
+
+.active-filter{
+background:#2563eb !important;
+}
+
+/* ==========================================
+   SORT
+========================================== */
+
+select{
+width:100%;
+padding:13px;
+margin-bottom:30px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer{
+margin-top:50px;
+text-align:center;
+color:#666;
+padding:25px;
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+/* ==========================================
+   PROJECT LIST
+========================================== */
+
+.project-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.project-card{
+background:#fff;
+padding:25px;
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+
+.project-header{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:15px;
+margin-bottom:15px;
+}
+
+.project-header h3{
+font-size:28px;
+margin-bottom:8px;
+}
+
+.project-description{
+color:#666;
+line-height:1.6;
+}
+
+.project-details{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:10px;
+margin:20px 0;
+font-size:16px;
+}
+
+/* ==========================================
+   STATUS BADGES
+========================================== */
+
+.status-badge{
+padding:7px 16px;
+border-radius:30px;
+font-size:14px;
+font-weight:bold;
+color:white;
+height:fit-content;
+}
+
+.completed-badge{
+background:#22c55e;
+}
+
+.pending-badge{
+background:#f59e0b;
+}
+
+/* ==========================================
+   PRIORITY COLORS
+========================================== */
+
+.high-priority{
+color:#e53935;
+font-weight:bold;
+}
+
+.medium-priority{
+color:#fb8c00;
+font-weight:bold;
+}
+
+.low-priority{
+color:#2e7d32;
+font-weight:bold;
+}
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+
+.action-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:18px;
+}
+
+.complete-btn,
+.edit-btn,
+.delete-btn,
+.manage-task-btn{
+border:none;
+padding:10px 18px;
+border-radius:8px;
+cursor:pointer;
+font-size:15px;
+color:white;
+transition:.3s;
+}
+
+.complete-btn{
+background:#16a34a;
+}
+
+.edit-btn{
+background:#2563eb;
+}
+
+.delete-btn{
+background:#dc2626;
+}
+
+.manage-task-btn{
+background:#444;
+margin-top:18px;
+width:100%;
+}
+
+.complete-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover,
+.manage-task-btn:hover{
+transform:scale(1.05);
+}
+
+/* ==========================================
+   TASK SECTION
+========================================== */
+
+.task-section{
+margin-top:25px;
+padding-top:25px;
+border-top:1px solid #ddd;
+}
+
+/* ==========================================
+   TASK FORM
+========================================== */
+
+.task-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-bottom:25px;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select{
+padding:12px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:15px;
+}
+
+.task-form button{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.task-form button:hover{
+background:#1d4ed8;
+}
+
+/* ==========================================
+   TASK CARD
+========================================== */
+
+.task-list{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.task-card{
+background:#f8fafc;
+padding:18px;
+border-radius:14px;
+box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
+
+.task-card h3{
+margin-bottom:8px;
+}
+
+.task-card p{
+margin:6px 0;
+line-height:1.5;
+}
+
+.completed{
+color:#16a34a;
+font-weight:bold;
+}
+
+.pending{
+color:#f59e0b;
+font-weight:bold;
+}
+
+/* ==========================================
+   EMPTY STATE
+========================================== */
+
+.empty-state{
+text-align:center;
+padding:40px;
+background:white;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.empty-state h3{
+margin-bottom:10px;
+}
+
+.empty-state p{
+color:#666;
+}
+
+/* ==========================================
+   PROJECT PROGRESS
+========================================== */
+
+.progress-section{
+margin-top:18px;
+}
+
+.progress-section p{
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.progress-bar{
+width:100%;
+height:10px;
+background:#ddd;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+background:linear-gradient(90deg,#16a34a,#22c55e);
+transition:.5s;
+}
+
+/* ==========================================
+   MEMBERS
+========================================== */
+
+.member-badge{
+display:inline-block;
+background:#2563eb;
+color:white;
+padding:5px 10px;
+border-radius:20px;
+font-size:13px;
+margin:4px;
+}
+/* ==========================================
+   MODAL
+========================================== */
+
+.modal-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+animation:fadeIn .2s;
+}
+
+.modal{
+background:#fff;
+width:520px;
+max-width:92%;
+padding:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.modal h2{
+margin-bottom:20px;
+font-size:28px;
+}
+
+.modal input,
+.modal textarea,
+.modal select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:15px;
+}
+
+.modal textarea{
+resize:none;
+}
+
+.modal-buttons{
+display:flex;
+justify-content:flex-end;
+gap:10px;
+margin-top:20px;
+}
+
+/* ==========================================
+   DELETE MODAL
+========================================== */
+
+.delete-modal{
+text-align:center;
+}
+
+.delete-modal h2{
+color:#dc2626;
+margin-bottom:15px;
+}
+
+.delete-modal p{
+font-size:17px;
+margin-bottom:25px;
+color:#555;
+}
+
+/* ==========================================
+   LOADER
+========================================== */
+
+.loader-container{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:80px 0;
+}
+
+.loader{
+width:60px;
+height:60px;
+border:6px solid #ddd;
+border-top:6px solid #2563eb;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-bottom:20px;
+}
+
+.loader-container p{
+font-size:20px;
+font-weight:bold;
+color:#555;
+}
+
+@keyframes spin{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+/* ==========================================
+   COMMENT SECTION
+========================================== */
+
+.comment-section{
+margin-top:25px;
+padding-top:20px;
+border-top:1px solid #ddd;
+}
+
+.comment-form{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.comment-form input{
+flex:1;
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.comment-form button{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.comment-card{
+background:#f8f9fa;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+box-shadow:0 3px 8px rgba(0,0,0,.05);
+}
+
+.comment-card p{
+margin-bottom:8px;
+line-height:1.5;
+}
+
+.comment-card small{
+color:#666;
+}
+
+.comment-card .delete-btn{
+padding:6px 12px;
+font-size:13px;
+margin-top:10px;
+}
+
+/* ==========================================
+   NOT FOUND PAGE
+========================================== */
+
+.not-found{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.not-found h1{
+font-size:120px;
+color:#2563eb;
+}
+
+.not-found h2{
+margin:15px 0;
+}
+
+.not-found a{
+margin-top:20px;
+text-decoration:none;
+background:#2563eb;
+color:white;
+padding:12px 20px;
+border-radius:10px;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.dashboard-header{
+flex-direction:column;
+text-align:center;
+}
+
+.dashboard-header h1{
+font-size:38px;
+}
+
+.dashboard-header h2{
+font-size:24px;
+}
+
+.project-list{
+grid-template-columns:1fr;
+}
+
+.stats-container{
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+width:96%;
+padding:15px;
+}
+
+.project-card{
+padding:20px;
+}
+
+.project-header{
+flex-direction:column;
+}
+
+.project-details{
+flex-direction:column;
+gap:8px;
+}
+
+.action-buttons{
+flex-direction:column;
+}
+
+.complete-btn,
+.edit-btn,
+.delete-btn,
+.manage-task-btn{
+width:100%;
+}
+
+.comment-form{
+flex-direction:column;
+}
+
+.comment-form button{
+width:100%;
+}
+
+.modal{
+padding:20px;
+}
+
+}
+
+@media(max-width:480px){
+
+.dashboard-header h1{
+font-size:30px;
+}
+
+.dashboard-header h2{
+font-size:20px;
+}
+
+.stat-card{
+padding:20px;
+}
+
+.stat-card h3{
+font-size:20px;
+}
+
+.stat-card p{
+font-size:32px;
+}
+
+.project-form{
+padding:20px;
+}
+
+.auth-card{
+width:95%;
+padding:30px;
+}
+
+}
+/* ================= COMMENTS ================= */
+
+.comment-section{
+margin-top:20px;
+padding-top:15px;
+border-top:1px solid #e5e5e5;
+}
+
+.comment-section h4{
+margin-bottom:15px;
+color:#2563eb;
+}
+
+.comment-input{
+display:flex;
+gap:10px;
+margin-bottom:15px;
+}
+
+.comment-input input{
+flex:1;
+padding:10px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+.comment-input button{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.comment-card{
+background:#f8f9fa;
+padding:12px;
+border-radius:10px;
+margin-bottom:10px;
+box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+
+.comment-card strong{
+display:block;
+color:#2563eb;
+margin-bottom:5px;
+}
+
+.comment-card small{
+color:#777;
+font-size:12px;
+}
+
+.comment-card .delete-btn{
+margin-top:10px;
+padding:6px 12px;
+font-size:13px;
+}
